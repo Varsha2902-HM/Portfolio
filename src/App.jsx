@@ -1,4 +1,5 @@
 import "./App.css";
+
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,81 +10,121 @@ import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+import heroImg from "./assets/my photo.jpg";
+import projectEvent from "./assets/project-event.jpg";
+import projectNetwork from "./assets/project-network.jpg";
+import cert1 from "./assets/certificate1.png";
+import cert2 from "./assets/certificate2.png";
+import cert3 from "./assets/certificate3.png";
+
 function App() {
   const portfolioData = {
     name: "VARSHA H M",
     role: "Computer Science and Engineering Student",
     phone: "8660032086",
     email: "varshanayakahm2004@gmail.com",
-    location: "Tiptur, Karnataka, 572114",
+    location: "Tiptur, Karnataka",
     linkedin: "https://www.linkedin.com/in/varsha-nayaka-472b83267",
     github: "https://github.com/Varsha2902-HM",
+    heroImage: heroImg,
+
     objective:
-      "To continuously improve my skills and knowledge, and to contribute my fullest ability toward the organization’s goals. A dedicated and motivated Computer Science and Business System Engineering student with a strong foundation in core engineering principles and an eagerness to apply theoretical knowledge to practical scenarios. Equipped with a strong analytical mindset and problem-solving skills, and a keen interest in emerging technologies and innovations within the field. Adept at collaborating in team environments, with excellent communication abilities and a commitment to continuous learning and professional growth.",
+      "Dedicated and motivated Computer Science student with strong interest in software development, AI, and problem solving. Passionate about building real-world applications and continuously learning new technologies.",
+
+    achievements: [
+      "Represented Karnataka state at National Level Softball",
+      "Participated in National Service Scheme (NSS)",
+    ],
+
+    personalProfile: {
+      languages: "Kannada, English, Hindi",
+      hobbies: "Photography, Editing, Travelling",
+    },
+
+    counters: [
+      { number: "3+", label: "Certifications" },
+      { number: "2+", label: "Projects" },
+      { number: "8.10", label: "CGPA" },
+      { number: "100%", label: "Dedication" },
+    ],
+
     skills: [
       "Python",
       "C",
-      "HTML/CSS",
-      "Data Structures and Algorithms (Basic)",
-      "DBMS (Basic)",
-      "AIML (Basic)",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "DBMS",
+      "DSA",
+      "Machine Learning",
+      "AI Basics",
     ],
+
     education: [
       {
         institution: "Malnad College of Engineering",
         year: "2022 - Present",
-        degree: "B.E in Computer Science and Engineering",
-        score: "CGPA: 8.10/10.00",
-        place: "Hassan, Karnataka",
+        degree: "B.E in CSE",
+        score: "CGPA: 8.10",
+        place: "Hassan",
       },
       {
-        institution: "Sri Madh Rambhapuri PU College",
+        institution: "PU College",
         year: "2020 - 2022",
-        degree: "PCMB (Pre-University)",
-        score: "Percentage: 84.5%",
-        place: "K B Cross, Karnataka",
+        degree: "PCMB",
+        score: "84.5%",
+        place: "K B Cross",
       },
       {
-        institution: "Sri Madh Rambhapuri High School",
+        institution: "High School",
         year: "2019 - 2020",
         degree: "SSLC",
-        score: "Percentage: 90%",
-        place: "K B Cross, Karnataka",
+        score: "90%",
+        place: "K B Cross",
       },
     ],
+
     projects: [
       {
-        title: "Event Planning Website – eventplanner.com",
+        title: "Event Planning Website",
         year: "2022",
-        description: [
-          "Developed using Google Sites to provide an online event planning and customization platform.",
-          "Enabled customers to explore event options, select decorative themes, catering menus, and entertainment choices tailored to their requirements.",
-          "Focused on enhancing user experience through an intuitive interface for seamless event customization and booking.",
-        ],
+        image: projectEvent,
+        tech: "Google Sites",
+        description:
+          "Developed an event planning platform for customization of decoration, catering, and event services.",
+        github: "https://github.com/Varsha2902-HM",
+        demo: "#",
       },
       {
-        title: "Detecting Network Attacks Using Artificial Intelligence (AI)",
+        title: "Network Attack Detection using AI",
         year: "2025",
-        description: [
-          "Developed an AI-based Intrusion Detection System (IDS) leveraging machine learning algorithms to identify and classify suspicious network activities in real time.",
-          "Implemented traffic pattern analysis to detect anomalies and known attack signatures, enhancing cybersecurity and reducing false positives.",
-          "Improved threat response time and overall network protection through intelligent, data-driven detection mechanisms.",
-        ],
+        image: projectNetwork,
+        tech: "Python, ML",
+        description:
+          "AI-based intrusion detection system to identify suspicious network activities.",
+        github: "https://github.com/Varsha2902-HM",
+        demo: "#",
       },
     ],
+
     certifications: [
-      "Completed NPTEL-certified course on Soft Skill Development, focusing on communication, teamwork, leadership, and workplace ethics.",
-      "Completed NPTEL-certified course on Introduction to Machine Learning, gaining hands-on knowledge of ML algorithms and data-driven decision making.",
-      "Completed NPTEL-certified course on Introduction to AI: Concepts and Techniques, gaining foundational knowledge of artificial intelligence and problem-solving techniques.",
+      {
+        title: "Soft Skill Development",
+        provider: "NPTEL",
+        image: cert1,
+      },
+      {
+        title: "Machine Learning",
+        provider: "NPTEL",
+        image: cert2,
+      },
+      {
+        title: "Artificial Intelligence",
+        provider: "NPTEL",
+        image: cert3,
+      },
     ],
-    achievements: [
-      "Represented Karnataka state at National Level Softball.",
-      "Actively participated in the programs of National Service Scheme.",
-    ],
-    personalProfile: {
-      languages: "Kannada, English, Hindi",
-      hobbies: "Photography, Film Making, Video Editing, Travelling",
-    },
   };
 
   return (
@@ -94,6 +135,7 @@ function App() {
         objective={portfolioData.objective}
         achievements={portfolioData.achievements}
         personalProfile={portfolioData.personalProfile}
+        counters={portfolioData.counters}
       />
       <Skills skills={portfolioData.skills} />
       <Education education={portfolioData.education} />

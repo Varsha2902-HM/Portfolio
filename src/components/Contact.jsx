@@ -1,33 +1,41 @@
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaLinkedin,
+  FaGithub,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+
 function Contact({ data }) {
   return (
-    <section id="contact" className="section contact-section">
+    <section id="contact" className="section">
       <div className="container">
         <h2 className="section-title">Contact</h2>
 
         <div className="contact-grid">
-          <div className="card">
+          <div className="card contact-card">
             <h3>Get in Touch</h3>
             <p>
-              <strong>Phone:</strong> {data.phone}
+              <FaPhoneAlt /> {data.phone}
             </p>
             <p>
-              <strong>Email:</strong> {data.email}
+              <FaEnvelope /> {data.email}
             </p>
             <p>
-              <strong>Location:</strong> {data.location}
+              <FaMapMarkerAlt /> {data.location}
             </p>
           </div>
 
-          <div className="card">
+          <div className="card contact-card">
             <h3>Professional Links</h3>
             <p>
               <a href={data.linkedin} target="_blank" rel="noreferrer">
-                LinkedIn Profile
+                <FaLinkedin /> LinkedIn Profile
               </a>
             </p>
             <p>
               <a href={data.github} target="_blank" rel="noreferrer">
-                GitHub Profile
+                <FaGithub /> GitHub Profile
               </a>
             </p>
           </div>
